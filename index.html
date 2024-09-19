@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФАН ШОП</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Company Logo" class="logo">
+        <a href="cart.html" class="cart-link">Кошнича: <span id="cart-count">0</span> продукти</a>
+    </header>
+
+    <br><br>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Официјален фан шоп на ФК Осогово - 100 години гордост и традиција!</h1>
+            <p>Откријте ја најновата колекција создадена за вистинските фанови. Прославете го вековниот јубилеј со уникатни парчиња што го носат духот на клубот во вашето секојдневие</p>
+        </div>
+    </section>
+    
+    <main>
+        <!-- Summer Collection Section -->
+        <section class="collection-section">
+            <h2>Летна Колекција</h2>
+            <div class="product-container">
+                <!-- Product items will be inserted here by script -->
+            </div>
+        </section>
+
+        <!-- Winter Collection Section -->
+        <section class="collection-section">
+            <h2>Зимска Колекција</h2>
+            <div class="product-container">
+                <!-- Product items will be inserted here by script -->
+            </div>
+        </section>
+
+        <!-- Accessories Section -->
+        <section class="collection-section">
+            <h2>Аксесоари</h2>
+            <div class="product-container">
+                <!-- Product items will be inserted here by script -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const productContainer = document.querySelector('.product-container');
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+
+        // Function to create product HTML
+        function createProductHTML(product) {
+            return `
+                <div class="product" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <h2>${product.name}</h2>
+                    <p><b>Цена: ${product.price} мкд</b></p>
+                    <label for="size" class="size-label">Избери големина:</label>
+                    <select name="size" class="product-size styled-select">
+                        <option value="${product.size}">${product.size}</option>
+                    </select>
+                    <button onclick="addToCart(this)">Додади во кошница</button>
+                </div>
+            `;
+        }
+
+        // Append products to the container
+        products.forEach(product => {
+            productContainer.innerHTML += createProductHTML(product);
+        });
+    });
+    </script>
+
+    <br><br><br>
+
+    <footer>
+        <div class="footer-content">
+            <p>Изработено од <a href="https://www.instagram.com/popovski_15/" target="_blank">Бојан Поповски</a> &copy; 2024</p>
+        </div>
+    </footer>
+</body>
+</html>

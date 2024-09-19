@@ -1,0 +1,347 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    padding-top: 46px; /* Adjust based on the height of your header */
+
+}
+
+header {
+    background-color: #ffcc00; /* Yellow */
+    color: #0077ff;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    /* Fix the navbar at the top */
+    position: fixed;
+    top: 0;
+    width: 100%; /* Ensure it stretches across the screen */
+    z-index: 1000; /* High z-index to stay above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for visual separation */
+}
+
+.logo {
+    height: 50px; /* Adjust as needed */
+    vertical-align: middle;
+}
+
+h1 {
+    margin: 0;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    max-width: 1200px; /* Maximum width for larger screens */
+    width: 100%; /* Full width within max-width */
+    margin: 0 auto; /* Center the container */
+    padding-left: 50px; /* Add some space to the left */
+}
+
+.product h2 {
+    margin: 0;
+    color: #0044cc; /* Dark Blue */
+    text-align: center;
+}
+
+.product p {
+    margin: 0.5em 0;
+    color: #333;
+}
+
+.product button {
+    background-color: #ffcc00; /* Yellow */
+    border: none;
+    color: #0033aa; /* Blue */
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.product button:hover {
+    background-color: #e6b800; /* Darker Yellow */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0; /* Remove left padding on mobile */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        gap: 10px; /* Adjust the gap between items */
+    }
+
+    .product {
+        width: 90%;
+        max-width: 300px;
+        padding: 0.5em; /* Reduce padding to make the products smaller */
+    }
+
+    .product-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px; /* Smaller border radius */
+    }
+
+    .product h2 {
+        font-size: 1em; /* Smaller font size */
+    }
+
+    .product p {
+        font-size: 0.9em; /* Smaller font size for price */
+    }
+
+    .product button {
+        font-size: 0.9em; /* Smaller button text */
+        padding: 0.3em 0.8em; /* Smaller button padding */
+    }
+}
+
+.collection-section {
+    margin-bottom: 50px;
+}
+
+.collection-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #1f46a0; /* Slightly Different Blue */
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 2%; /* Adjust padding for smaller screens */
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding is included in total width/height */
+}
+
+.footer-content {
+    max-width: 1000px; /* Adjust max-width to be more flexible */
+    margin: 0 auto;
+    padding: 0 1em; /* Add some padding on the sides for smaller screens */
+    box-sizing: border-box; /* Include padding in the total width */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em; /* Ensure font size is scalable */
+}
+
+footer a {
+    color: #ffcc00; /* Yellow */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for tablets and small screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 1em 1%; /* Adjust padding for smaller screens */
+    }
+
+    .footer-content {
+        padding: 0; /* Remove side padding */
+    }
+}
+
+/* Media Query for mobile phones */
+@media (max-width: 480px) {
+    footer {
+        padding: 0.5em 1%; /* Even smaller padding for mobile */
+    }
+
+    footer p {
+        font-size: 0.9em; /* Slightly smaller font size for mobile */
+    }
+}
+
+.cart-link {
+    color: #ffcc00; /* Yellow */
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #1649be; /* Slightly different Blue */
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cart-link:hover {
+    background-color: #2050b1; /* Darker Blue */
+    color: #ffffff; /* White text on hover for better contrast */
+}
+
+.cart-link span {
+    font-weight: normal; /* Optional: Make the item count less prominent */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-image: url('img/HERO.jpg'); /* Path to your hero image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    height:91vh; /* Hero section height - adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    text-align: center;
+    overflow: hidden; /* Ensure content doesn't spill out */
+}
+
+.hero::before {
+    content: ""; /* Empty content for pseudo-element */
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    z-index: 1; /* Ensure it sits on top of the background image */
+}
+
+.hero * {
+    position: relative; /* Ensure text and other elements stay above the mask */
+    z-index: 2; /* Ensure content is above the mask */
+}
+
+
+
+.hero-text {
+    position: relative;
+    z-index: 1; /* Ensure text is above the image */
+    max-width: 80%; /* Restrict the text width */
+    padding: 1em;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    color: #ffcc00;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #ffffff;
+}
+
+.hero-button {
+    background-color: #ffcc00; /* Button background color */
+    color: #0033aa; /* Button text color */
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .hero-button {
+        font-size: 1em;
+        padding: 0.5em 1em;
+    }
+}
+
+
+.product-size {
+    -webkit-appearance: none; /* Remove default styling */
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative; /* For custom arrow positioning */
+    margin-bottom: 10px;
+}
+
+/* Remove default arrow */
+.product-size::after {
+    content: '\u25BC'; /* Unicode for down arrow */
+    font-size: 12px;
+    color: #333;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Styling on hover and focus */
+.product-size:hover,
+.product-size:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Styling for the dropdown when expanded */
+.product-size:focus::after {
+    color: #007bff;
+}
+
+/* Optional: add a shadow for depth effect */
+.product-size {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .product-size {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}

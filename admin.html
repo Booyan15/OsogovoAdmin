@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Company Logo" class="logo">
+        <a href="index.html" class="back-link">Back to Shop</a>
+    </header>
+
+    <main>
+        <h1>Manage Products</h1>
+        
+        <section class="form-section">
+            <h2>Add New Product</h2>
+            <form id="add-product-form" enctype="multipart/form-data">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+
+                <label for="product-price">Price (MKD):</label>
+                <input type="number" id="product-price" name="product-price" required>
+
+                <label for="product-image">Upload Product Image:</label>
+                <input type="file" id="product-image" name="product-image" accept="image/*" required>
+
+                <label for="product-size">Size (for size selection):</label>
+                <select id="product-size" name="product-size">
+                    <option value="UNIVERSAL">Universal Size</option>
+                    <option value="SIZE1">Size 1</option>
+                    <option value="SIZE2">Size 2</option>
+                </select>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <section class="product-list">
+            <h2>Product List</h2>
+            <div id="product-list-container">
+                <!-- Product items will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
